@@ -8,7 +8,7 @@ public class BookDTO {
     private Long id;
     private String title;
     private String author;
-    private String publicationYear;
+    private String publisherYear;
     private Integer numberPages;
     private BigDecimal price;
 
@@ -17,7 +17,7 @@ public class BookDTO {
 
     public BookDTO(String title, String publicationYear, String author, Integer numberPages, BigDecimal price) {
         this.title = title;
-        this.publicationYear = publicationYear;
+        this.publisherYear = publicationYear;
         this.author = author;
         this.numberPages = numberPages;
         this.price = price;
@@ -26,7 +26,7 @@ public class BookDTO {
     public BookDTO(BookEntity book) {
         this.title = book.getTitle();
         this.author = book.getAuthor();
-        this.publicationYear = book.getPublisherYear();
+        this.publisherYear = book.getPublisherYear();
         this.numberPages = book.getNumberPages();
         this.price = book.getPrice();
     }
@@ -48,11 +48,11 @@ public class BookDTO {
     }
 
     public String getPublicationYear() {
-        return publicationYear;
+        return publisherYear;
     }
 
     public void setPublicationYear(String publicationYear) {
-        this.publicationYear = publicationYear;
+        this.publisherYear = publicationYear;
     }
 
     public Integer getNumberPages() {
