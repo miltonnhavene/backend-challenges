@@ -4,20 +4,20 @@ import com.io.tiny.dev.library_api.dto.BookDTO;
 import com.io.tiny.dev.library_api.entity.BookEntity;
 
 public class BookMapper {
-    public BookEntity toEntity(BookDTO dto) {
+    public static BookEntity toEntity(BookDTO dto) {
         if (dto == null) {
             return null;
         }
-        BookEntity entity = new BookEntity();
-        entity.setTitle(dto.getTitle());
-        entity.setAuthor(dto.getAuthor());
-        entity.setPublisherYear(dto.getPublicationYear());
-        entity.setNumberPages(dto.getNumberPages());
-        entity.setPrice(dto.getPrice());
-        return entity;
+        BookEntity bookEntity = new BookEntity();
+        bookEntity.setTitle(dto.getTitle());
+        bookEntity.setAuthor(dto.getAuthor());
+        bookEntity.setPublisherYear(dto.getPublicationYear());
+        bookEntity.setNumberPages(dto.getNumberPages());
+        bookEntity.setPrice(dto.getPrice());
+        return bookEntity;
     }
 
-    public BookDTO toDTO(BookEntity entity) {
+    public static BookDTO toDTO(BookEntity entity) {
         if (entity == null) {
             return null;
         }

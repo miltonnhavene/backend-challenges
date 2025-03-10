@@ -1,8 +1,6 @@
 package com.io.tiny.dev.library_api.entity;
 
-
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 
 @Entity

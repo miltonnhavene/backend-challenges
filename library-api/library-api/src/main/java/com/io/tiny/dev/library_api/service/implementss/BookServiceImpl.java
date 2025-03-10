@@ -17,15 +17,14 @@ public class BookServiceImpl implements BookService {
     @Autowired
     private BookRepository bookRepository;
 
-    @Autowired
-    private BookMapper bookMapper;
-
+    //➔	Registo de Livros
     public BookDTO createBook(BookDTO bookDto) {
-        BookEntity book = bookMapper.toEntity(bookDto);
+        BookEntity book = BookMapper.toEntity(bookDto);
         BookEntity savedBook = bookRepository.save(book);
-        return bookMapper.toDTO(savedBook);
+        return BookMapper.toDTO(savedBook);
     }
 
+    //➔	Listagem de Livros
     public Page<BookEntity> getAllBooks(String author, Integer year, Pageable pageable) {
         if (author != null && year != null) {
             return bookRepository.findByAuthorAndPublisherYear(author, year, pageable);
@@ -37,10 +36,12 @@ public class BookServiceImpl implements BookService {
         return bookRepository.findAll(pageable);
     }
 
+    //➔	Detalhes de um Livro
     public Optional<BookEntity> getBookById(Long id) {
         return bookRepository.findById(id);
     }
 
+    //➔	Atualização de Livro
     public BookEntity updateBook(Long id, BookEntity updatedBook) {
         return bookRepository.findById(id).map(book -> {
             book.setTitle(updatedBook.getTitle());
@@ -52,6 +53,7 @@ public class BookServiceImpl implements BookService {
         }).orElseThrow(() -> new RuntimeException("Livro não encontrado"));
     }
 
+    //➔	Exclusão de Livro
     public void deleteBook(Long id) {
         bookRepository.deleteById(id);
     }

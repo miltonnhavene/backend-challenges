@@ -1,57 +1,58 @@
 package com.io.tiny.dev.library_api.dto;
 
-import com.io.tiny.dev.library_api.entity.BookEntity;
+
 import com.io.tiny.dev.library_api.entity.LoanEntity;
 
 import java.time.LocalDate;
 
 public class LoanDTO {
-    private Long id;
-    private String nameClient;
-    private LocalDate dueDate;
-    private LocalDate loanDate;
+    private Long bookId;
+    private Long userID;
+    private LocalDate localDate;
     private LocalDate returnDate;
+    private Boolean returned;
 
     public LoanDTO() {
-
     }
 
-    public LoanDTO(String nameClient, LocalDate dueDate, LocalDate loanDate, LocalDate returnDate) {
-        this.nameClient = nameClient;
-        this.dueDate = dueDate;
-        this.loanDate = loanDate;
+    public LoanDTO(Long bookId, Long userID, LocalDate localDate, LocalDate returnDate, Boolean returned) {
+        this.bookId = bookId;
+        this.userID = userID;
+        this.localDate = localDate;
         this.returnDate = returnDate;
+        this.returned = returned;
     }
 
     public LoanDTO(LoanEntity loan) {
-        this.nameClient = loan.getNameClient();
-        this.dueDate = loan.getDueDate();
-        this.loanDate = loan.getLoanDate();
-        this.returnDate = loan.getReturnDate();
+        this.bookId = bookId;
+        this.userID = userID;
+        this.localDate = localDate;
+        this.returnDate = returnDate;
+        this.returned = returned;
     }
 
-    public String getNameClient() {
-        return nameClient;
+    public Long getBookId() {
+        return bookId;
     }
 
-    public void setNameClient(String nameClient) {
-        this.nameClient = nameClient;
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
     }
 
-    public LocalDate getDueDate() {
-        return dueDate;
+    public Long getUserID() {
+        return userID;
     }
 
-    public void setDueDate(LocalDate dueDate) {
-        this.dueDate = dueDate;
+    public void setUserID(Long userID) {
+        this.userID = userID;
     }
 
-    public LocalDate getLoanDate() {
-        return loanDate;
+    public LocalDate getLocalDate() {
+        return localDate;
     }
 
-    public void setLoanDate(LocalDate loanDate) {
-        this.loanDate = loanDate;
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
     }
 
     public LocalDate getReturnDate() {
@@ -60,5 +61,13 @@ public class LoanDTO {
 
     public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
+    }
+
+    public Boolean getReturned() {
+        return returned;
+    }
+
+    public void setReturned(Boolean returned) {
+        this.returned = returned;
     }
 }
