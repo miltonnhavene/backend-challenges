@@ -15,10 +15,10 @@ public class BookDTO {
     public BookDTO() {
     }
 
-    public BookDTO(String title, String publicationYear, String author, Integer numberPages, BigDecimal price) {
+    public BookDTO(String title, String author, String publisherYear, Integer numberPages, BigDecimal price) {
         this.title = title;
-        this.publisherYear = publicationYear;
         this.author = author;
+        this.publisherYear = publisherYear;
         this.numberPages = numberPages;
         this.price = price;
     }
@@ -47,12 +47,12 @@ public class BookDTO {
         this.author = author;
     }
 
-    public String getPublicationYear() {
+    public String getPublisherYear() {
         return publisherYear;
     }
 
-    public void setPublicationYear(String publicationYear) {
-        this.publisherYear = publicationYear;
+    public void setPublisherYear(String publisherYear) {
+        this.publisherYear = publisherYear;
     }
 
     public Integer getNumberPages() {

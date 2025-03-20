@@ -11,7 +11,7 @@ public class BookMapper {
         BookEntity bookEntity = new BookEntity();
         bookEntity.setTitle(dto.getTitle());
         bookEntity.setAuthor(dto.getAuthor());
-        bookEntity.setPublisherYear(dto.getPublicationYear());
+        bookEntity.setPublisherYear(dto.getPublisherYear());
         bookEntity.setNumberPages(dto.getNumberPages());
         bookEntity.setPrice(dto.getPrice());
         return bookEntity;

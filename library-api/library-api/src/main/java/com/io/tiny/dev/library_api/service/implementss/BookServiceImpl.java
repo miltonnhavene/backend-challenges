@@ -42,13 +42,13 @@ public class BookServiceImpl implements BookService {
     }
 
     //➔	Atualização de Livro
-    public BookEntity updateBook(Long id, BookEntity updatedBook) {
+    public BookEntity updateBook(Long id, BookDTO bookDTO) {
         return bookRepository.findById(id).map(book -> {
-            book.setTitle(updatedBook.getTitle());
-            book.setAuthor(updatedBook.getAuthor());
-            book.setPublisherYear(updatedBook.getPublisherYear());
-            book.setNumberPages(updatedBook.getNumberPages());
-            book.setPrice(updatedBook.getPrice());
+            book.setTitle(bookDTO.getTitle());
+            book.setAuthor(bookDTO.getAuthor());
+            book.setPublisherYear(bookDTO.getPublisherYear());
+            book.setNumberPages(bookDTO.getNumberPages());
+            book.setPrice(bookDTO.getPrice());
             return bookRepository.save(book);
         }).orElseThrow(() -> new RuntimeException("Livro não encontrado"));
     }

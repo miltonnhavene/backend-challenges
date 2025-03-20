@@ -1,10 +1,10 @@
 package com.io.tiny.dev.library_api.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "books")
+@Table(name = "Books")
 
 public class BookEntity {
     @Id
